@@ -135,15 +135,16 @@ nav.scrolled{background:rgba(246,240,226,.9);backdrop-filter:blur(12px);-webkit-
 .nav-links .btn.order small{font-size:.48rem}
 /* quick links: a row of Kufic diamonds */
 .quick{display:flex;gap:2.2rem;margin-top:2.2rem;padding-top:1.6rem;border-top:1px solid var(--line)}
-.quick a{display:flex;flex-direction:column;align-items:center;gap:.9rem;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--sand);opacity:.9;transition:color .3s}
-.quick a:hover{color:var(--gold);opacity:1}
-.quick .ico{width:15px;height:15px;color:var(--gold)}
+.quick a{display:flex;flex-direction:column;align-items:center;gap:.9rem;font-size:.56rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--dark);transition:color .3s}
+.quick a:hover{color:var(--gold-deep)}
+.quick .ico{width:15px;height:15px;color:var(--bean)}
 .quick .ico.stars-row{width:44px;height:9px}
 .follow .ico.stars-row{width:60px;height:12px}
 .socials .ico.stars-row{width:34px;height:7px}
-.quick .dia{width:46px;height:46px;border:1px solid var(--line-strong);transform:rotate(45deg);display:grid;place-items:center;transition:background .3s,border-color .3s,transform .3s}
+/* dark-brown diamonds with gold icons so the four links read as buttons */
+.quick .dia{width:46px;height:46px;background:var(--dark);border:1px solid var(--dark);box-shadow:0 0 0 3px var(--ink),0 0 0 4px rgba(160,114,81,.45),0 8px 18px rgba(43,33,27,.22);transform:rotate(45deg);display:grid;place-items:center;transition:background .3s,border-color .3s,transform .3s,box-shadow .3s}
 .quick .dia .ico{transform:rotate(-45deg);transition:color .3s}
-.quick a:hover .dia{background:var(--gold);border-color:var(--gold);transform:rotate(45deg) scale(1.08)}
+.quick a:hover .dia{background:var(--gold);border-color:var(--gold);transform:rotate(45deg) scale(1.08);box-shadow:0 0 0 3px var(--ink),0 0 0 4px var(--gold),0 10px 22px rgba(43,33,27,.25)}
 .quick a:hover .dia .ico{color:var(--ink)}
 /* arched sign photo */
 .arch-wrap{width:min(420px,100%);margin-left:auto;padding:12px}
