@@ -197,9 +197,10 @@ footer{overflow-x:clip}
 .cup h3{font-size:2rem;margin:.6rem 0 .7rem}
 .cup p{font-size:.93rem;color:rgba(241,230,204,.72);min-height:5.2em}
 .cup .notes{margin-top:1.3rem;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
-.menu-note{margin-top:2.6rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;padding:1.6rem 2rem;border:1px solid var(--gold);position:relative;background:var(--ink)}
+.menu-note{margin-top:2.2rem;display:flex;justify-content:space-between;align-items:center;gap:1.4rem;flex-wrap:wrap;padding:1.2rem 1.6rem;border:1px solid var(--gold);position:relative;background:var(--ink)}
 .menu-note{box-shadow:inset 0 0 0 6px var(--ink),inset 0 0 0 7px var(--line)}
-.menu-note p{font-family:var(--serif);font-size:1.5rem;color:var(--sand);line-height:1.2}
+.menu-note p{font-family:var(--serif);font-size:1.4rem;color:var(--sand);line-height:1.2}
+.menu-note .btn{padding:.75rem 1.4rem;font-size:.66rem}
 .menu-note p em{color:var(--gold)}
 .menu-note small{display:block;margin-top:.4rem;font-family:var(--sans);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85}
 
@@ -296,7 +297,12 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
   .topband{padding-top:76px}
   .hero{padding:40px 0 40px;min-height:0}
   .hero-grid,.story-grid,.rev-grid,.visit-grid{grid-template-columns:1fr;gap:2.4rem}
-  .arch-wrap{display:none}
+  .arch-wrap{position:absolute;inset:0;width:auto;margin:0;padding:0;z-index:-1;opacity:1!important;transform:none!important}
+  .arch-photo{height:100%;aspect-ratio:auto;border-radius:0;border:0;box-shadow:none}
+  .arch-photo img{object-position:50% 30%;opacity:.5}
+  .arch-photo::after{background:linear-gradient(180deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,.45) 40%,rgba(10,10,10,.82) 78%,var(--ink) 100%)}
+  .arch-wrap .cap{display:none}
+  .hero{padding:48px 0 44px}
   .hero::after{background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(226,199,144,.12),transparent 70%)}
   .hero h1{font-size:clamp(2.7rem,12vw,4rem);margin:.9rem 0 1rem}
   .hero p.lede{font-size:1rem}
@@ -321,8 +327,9 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
   .rail{scroll-padding-left:6vw;padding-left:6vw;padding-right:6vw}
   .marquee span{font-size:.5rem;padding:0 .7rem;gap:.7rem}
   .marquee span.ar{font-size:.68rem}
-  .menu-note{padding:1.3rem 1.2rem}
-  .menu-note p{font-size:1.3rem}
+  .menu-note{padding:1.1rem 1.1rem}
+  .menu-note p{font-size:1.2rem}
+  .menu-note .btn{width:100%}
   .foot-bottom{justify-content:center;text-align:center}
   body{padding-bottom:72px}
 }
@@ -435,7 +442,7 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
     </div>
     <div class="menu-note rv">
       <p>The full menu is one tap away.<small>Coffee · Chai · Crepes · Waffles · Desserts</small></p>
-      <a class="btn solid order js-order" href="#visit"><b>Order Ahead</b><small>Pickup &amp; delivery available</small></a>
+      <a class="btn solid js-order" href="#visit">See Menu</a>
     </div>
   </div>
 </section>
