@@ -61,7 +61,8 @@ Also near the top: the `<link rel="canonical">`, `og:image`, `twitter:image` and
 
 ## Brand notes
 
-- Colors: black `#0A0A0A`, sand gold `#E2C790` (sampled from the logo), light sand `#F1E6CC` (Visit section), deep gold `#B89A5E` (accents). The shop's print collateral also uses cream with a brown/terracotta mark.
+- Colors (light theme, from Hadara's own collateral): cream `#F6F0E2` page, brown `#A07251` mark and headings (both sampled from their Instagram avatar; the same pair appears on the window vinyl and the Coming Soon / Now Hiring posters), dark brown `#2B211B` for the review band and footer, soft gold `#D9B98A` on dark. The original gold-on-black PNGs are kept for the dark footer and the blade sign.
+- Interior (from their June 2026 "sneak peak" video): grey stone-block walls, arched niches, vintage lantern sconces, and a hand-drawn mural of Sana'a tower houses on cream plaster. The gallery copy describes this.
 - Type: Cormorant Garamond 600/700 (headlines, wordmark feel), Jost 300–500 (body, tracked caps), Reem Kufi (Arabic).
 - Motifs: square-Kufic tile pattern (CSS data-URI), qamariya arched-window frame in the hero drawn with SVG `stroke-dashoffset`, diamond markers. `prefers-reduced-motion` disables all animation.
 
