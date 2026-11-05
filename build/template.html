@@ -132,12 +132,15 @@ nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(12px);-webkit-ba
 .btn.order small{font-weight:500;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;opacity:.95}
 .nav-links .btn.order{padding:.5rem 1rem}
 .nav-links .btn.order small{font-size:.48rem}
-.order-cta{display:inline-flex;margin-top:2.2rem}
-.order-cta .btn{padding:1rem 2.8rem;font-size:.8rem}
-.quick{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2.2rem;padding-top:1.6rem;border-top:1px solid var(--line)}
-.quick a{display:inline-flex;align-items:center;gap:.6rem;padding:.65rem 1rem;border:1px solid var(--line-strong);font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--sand);transition:border-color .3s,background .3s,color .3s}
-.quick a:hover{border-color:var(--gold);background:rgba(226,199,144,.1);color:var(--gold)}
+/* quick links: a row of Kufic diamonds */
+.quick{display:flex;gap:2.2rem;margin-top:2.2rem;padding-top:1.6rem;border-top:1px solid var(--line)}
+.quick a{display:flex;flex-direction:column;align-items:center;gap:.9rem;font-size:.56rem;letter-spacing:.26em;text-transform:uppercase;color:var(--sand);opacity:.9;transition:color .3s}
+.quick a:hover{color:var(--gold);opacity:1}
 .quick .ico{width:15px;height:15px;color:var(--gold)}
+.quick .dia{width:46px;height:46px;border:1px solid var(--line-strong);transform:rotate(45deg);display:grid;place-items:center;transition:background .3s,border-color .3s,transform .3s}
+.quick .dia .ico{transform:rotate(-45deg);transition:color .3s}
+.quick a:hover .dia{background:var(--gold);border-color:var(--gold);transform:rotate(45deg) scale(1.08)}
+.quick a:hover .dia .ico{color:var(--ink)}
 /* arched sign photo */
 .arch-wrap{width:min(420px,100%);margin-left:auto;padding:12px}
 .arch-photo{position:relative;aspect-ratio:4/5;border-radius:var(--arch);overflow:hidden;border:1px solid var(--line-strong);box-shadow:0 0 0 10px var(--ink),0 0 0 11px var(--line)}
@@ -274,7 +277,7 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
 .foot-bottom a:hover{color:var(--gold)}
 
 /* ---------- FLOATING ORDER BUTTON ---------- */
-.fab{position:fixed;right:14px;bottom:14px;z-index:60;display:flex;align-items:center;gap:.55rem;padding:.5rem .95rem .5rem .55rem;background:var(--gold);color:var(--ink);border:1px solid var(--gold-deep);box-shadow:0 12px 36px rgba(0,0,0,.55),0 0 0 4px rgba(10,10,10,.85);transition:transform .35s,opacity .35s,background .3s}
+.fab{position:fixed;right:14px;bottom:14px;z-index:60;display:none;align-items:center;gap:.55rem;padding:.5rem .95rem .5rem .55rem;background:var(--gold);color:var(--ink);border:1px solid var(--gold-deep);box-shadow:0 12px 36px rgba(0,0,0,.55),0 0 0 4px rgba(10,10,10,.85);transition:transform .35s,opacity .35s,background .3s}
 .fab:hover{transform:translateY(-3px);background:var(--sand)}
 .fab.hide{transform:translateY(160%);opacity:0;pointer-events:none}
 .fab img{height:24px;width:auto;filter:brightness(0);opacity:.85}
@@ -306,10 +309,10 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
   .hero::after{background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(226,199,144,.12),transparent 70%)}
   .hero h1{font-size:clamp(2.7rem,12vw,4rem);margin:.9rem 0 1rem}
   .hero p.lede{font-size:1rem}
-  .order-cta{width:100%}
-  .order-cta .btn{width:100%}
-  .quick{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
-  .quick a{justify-content:center;padding:.8rem .6rem;font-size:.6rem;letter-spacing:.2em}
+  .quick{justify-content:space-between;gap:.4rem;padding:1.4rem .6rem 0}
+  .quick a{font-size:.52rem;letter-spacing:.2em}
+  .quick .dia{width:42px;height:42px}
+  .fab{display:flex}
   .nav-links{position:fixed;inset:76px 0 auto 0;flex-direction:column;align-items:stretch;background:var(--ink);padding:1.4rem 5vw 1.8rem;gap:1.2rem;border-bottom:1px solid var(--line);transform:translateY(-130%);visibility:hidden;transition:transform .4s,visibility 0s .4s;z-index:40}
   .nav-links a{padding:.2rem 0}
   .nav-links.open{transform:none;visibility:visible;transition:transform .4s,visibility 0s}
@@ -364,6 +367,7 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
       <a href="https://www.google.com/maps/dir/?api=1&destination=5052+West+Ln+Ste+4+Stockton+CA+95210" target="_blank" rel="noopener">Directions</a>
       <a href="#follow">Follow</a>
       <a class="js-review" href="#follow" target="_blank" rel="noopener">Review</a>
+      <a class="btn solid order js-order" href="#visit"><b>Order Ahead</b><small>Pickup &amp; delivery available</small></a>
     </div>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 24 24" aria-hidden="true"><g class="m"><path d="M3 4h18"/><path d="M3 11h10v9h8"/><path d="M3 18h5"/><path d="M17 4v4h4"/></g><g class="x"><path d="M5 5l14 14M19 5L5 19"/></g></svg></button>
   </div>
@@ -383,14 +387,11 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
       <div class="eyebrow rule">Yemeni Coffee House · Stockton, CA · The 209</div>
       <h1>Civilization,<br>poured <em>by the cup.</em></h1>
       <p class="lede"><b>Hadara — حضارة — means civilization.</b> Authentic Yemeni coffee, chai, crepes and desserts, brewed the way the birthplace of coffee has poured it for centuries. On West Lane in Stockton.</p>
-      <div class="order-cta">
-        <a class="btn solid order js-order" href="#visit"><b>Order Ahead</b><small>Pickup &amp; delivery available</small></a>
-      </div>
       <div class="quick" aria-label="Quick links">
-        <a href="https://www.tiktok.com/@hadara_coffee" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 6.7a4.8 4.8 0 0 1-3.8-4.2V2h-3.4v13.6a2.9 2.9 0 1 1-2-2.7V9.4a6.3 6.3 0 1 0 5.4 6.2V8.7a8.2 8.2 0 0 0 3.8 1.2V6.7z"/></svg>TikTok</a>
-        <a href="https://www.instagram.com/hadara_coffee" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2.2c-2.7 0-3 0-4 .1C4.9 2.4 2.4 4.9 2.3 8c-.1 1-.1 1.3-.1 4s0 3 .1 4c.1 3.1 2.6 5.6 5.7 5.7 1 .1 1.3.1 4 .1s3 0 4-.1c3.1-.1 5.6-2.6 5.7-5.7.1-1 .1-1.3.1-4s0-3-.1-4C21.6 4.9 19.1 2.4 16 2.3c-1-.1-1.3-.1-4-.1zm0 1.8c2.6 0 2.9 0 4 .1 2.2.1 3.7 1.6 3.8 3.8.1 1 .1 1.3.1 4s0 3-.1 4c-.1 2.2-1.6 3.7-3.8 3.8-1 .1-1.3.1-4 .1s-3 0-4-.1c-2.2-.1-3.7-1.6-3.8-3.8-.1-1-.1-1.3-.1-4s0-3 .1-4C4.3 5.7 5.8 4.2 8 4.1c1-.1 1.3-.1 4-.1z"/></svg>Instagram</a>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=5052+West+Ln+Ste+4+Stockton+CA+95210" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Directions</a>
-        <a class="js-review" href="#follow" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>Leave a review</a>
+        <a href="https://www.tiktok.com/@hadara_coffee" target="_blank" rel="noopener"><span class="dia"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 6.7a4.8 4.8 0 0 1-3.8-4.2V2h-3.4v13.6a2.9 2.9 0 1 1-2-2.7V9.4a6.3 6.3 0 1 0 5.4 6.2V8.7a8.2 8.2 0 0 0 3.8 1.2V6.7z"/></svg></span><small>TikTok</small></a>
+        <a href="https://www.instagram.com/hadara_coffee" target="_blank" rel="noopener"><span class="dia"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2.2c-2.7 0-3 0-4 .1C4.9 2.4 2.4 4.9 2.3 8c-.1 1-.1 1.3-.1 4s0 3 .1 4c.1 3.1 2.6 5.6 5.7 5.7 1 .1 1.3.1 4 .1s3 0 4-.1c3.1-.1 5.6-2.6 5.7-5.7.1-1 .1-1.3.1-4s0-3-.1-4C21.6 4.9 19.1 2.4 16 2.3c-1-.1-1.3-.1-4-.1zm0 1.8c2.6 0 2.9 0 4 .1 2.2.1 3.7 1.6 3.8 3.8.1 1 .1 1.3.1 4s0 3-.1 4c-.1 2.2-1.6 3.7-3.8 3.8-1 .1-1.3.1-4 .1s-3 0-4-.1c-2.2-.1-3.7-1.6-3.8-3.8-.1-1-.1-1.3-.1-4s0-3 .1-4C4.3 5.7 5.8 4.2 8 4.1c1-.1 1.3-.1 4-.1z"/></svg></span><small>Instagram</small></a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=5052+West+Ln+Ste+4+Stockton+CA+95210" target="_blank" rel="noopener"><span class="dia"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span><small>Directions</small></a>
+        <a class="js-review" href="#follow" target="_blank" rel="noopener"><span class="dia"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg></span><small>Leave a review</small></a>
       </div>
     </div>
     <figure class="arch-wrap rv">
@@ -552,7 +553,7 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
   document.getElementById('yr').textContent=new Date().getFullYear();
 
   /* Floating order button: only when no other Order Ahead button is on screen */
-  var fab=document.querySelector('.fab'), orderBtns=document.querySelectorAll('.js-order:not(.fab)');
+  var fab=document.querySelector('.fab'), orderBtns=document.querySelectorAll('.js-order:not(.fab):not(.nav-links .js-order)');
   if(fab&&'IntersectionObserver' in window){
     var seen=[];
     var fo=new IntersectionObserver(function(es){es.forEach(function(e){var i=seen.indexOf(e.target);if(e.isIntersecting){if(i<0)seen.push(e.target)}else if(i>=0){seen.splice(i,1)}});fab.classList.toggle('hide',seen.length>0)},{threshold:.4});
