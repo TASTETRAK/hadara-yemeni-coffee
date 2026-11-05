@@ -35,22 +35,29 @@ Sources actually read, in order of trust:
 
 Meaning of the name: حضارة (ḥaḍāra) = civilization. The mark is the word حضارة in square Kufic, stacked like a Sana'a tower house.
 
-## CONFIRM before go-live
+## Links to set (one place each)
 
-Every one of these is also marked in `index.html` with an `<!-- CONFIRM: … -->` comment.
+Open `index.html` and find the `<body>` tag near the top:
 
-1. **Opening status / date.** Site says "Opening soon on West Lane". Their last post (Oct 18, 2026) still said preparing to open. Update once open.
-2. **"The first Yemeni coffee house in the 209."** Hadara's own claim. Sahara Coffee House in Merced has been promoted with a similar claim. Keep, soften, or drop per the owner.
-3. **Order Ahead link.** No ordering platform found. Both "Order Ahead" buttons currently point to `#visit`. Replace with the real URL.
-4. **Hours.** None published. Site shows "Posted at opening".
-5. **Phone.** None published. Site shows "Phone number coming soon". Do not invent one.
-6. **Email info@hadaracoffee.com.** From the hiring post. Confirm it is monitored.
-7. **Instagram @hadara_coffee.** Linked but unverified.
-8. **Menu.** The six "field guide" cards are classic Yemeni coffee-house styles (qishr, Adeni chai, mufawar, jubani, Sana'ani) plus a "Crepes & Sweets" card based on the hiring poster's categories (Coffee, Crepes, Waffles, Desserts). No prices. Swap in the real menu when supplied.
-9. **Gallery photos.** Two tiles are stills from Hadara's own TikTok posts (blade sign, Aug 2026; storefront vinyl, May 2026). Get the owner's OK or their originals. The other four tiles are intentional labeled placeholders.
-10. **Yelp quote.** Linda R.'s public review is quoted with attribution in Our Story. Ask the owner whether they want it.
-11. **Google Maps embed** uses the street address, not a place ID, because no listing exists yet. When the owner creates a Google Business Profile, switch to the place link.
-12. **"Same center as China Palace and Wingstop"** is confirmed by Google Maps; "West Lane at Hammer Lane" is from the map and should be sanity-checked by someone local.
+```html
+<body data-order-url="#visit" data-review-url="https://www.yelp.com/biz/hadara-stockton">
+```
+
+- `data-order-url`: the online-ordering link (pickup & delivery). Every "Order Ahead" button and the floating button read from it. Until it is set they scroll to the Visit section.
+- `data-review-url`: swap the Yelp link for the Google review link once the Google Business Profile exists. Every "Leave a review" link reads from it.
+
+Also near the top: the `<link rel="canonical">`, `og:image`, `twitter:image` and JSON-LD `url` are absolute URLs pointing at the GitHub Pages address. Change them when the site moves to its final domain so link previews keep working.
+
+## Still to supply from the owner
+
+1. **Order link** (above).
+2. **Hours.** None published anywhere. The Visit section says "Daily hours on our socials" rather than inventing them.
+3. **Phone.** None published, so the site shows email only (info@hadaracoffee.com, from the hiring post).
+4. **Google review link** once the Google listing exists (above).
+5. **Menu.** The six swipeable "field guide" cards are classic Yemeni coffee-house styles plus a Crepes & Sweets card from the hiring poster's categories. No prices. Replace with real items when supplied.
+6. **Gallery photos.** Two tiles are stills from Hadara's own TikTok posts (blade sign, storefront vinyl). Four tiles are labeled placeholders waiting for real photos.
+7. **"First Yemeni coffee house in the 209"** appears only inside the quoted Yelp review now; the hero says "Yemeni Coffee House · Stockton, CA · The 209".
+8. **Instagram @hadara_coffee** is linked but could not be opened to verify.
 
 ## Brand notes
 
