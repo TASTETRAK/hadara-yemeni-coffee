@@ -10,6 +10,7 @@ def b64(rel, mime):
     with open(os.path.join(ROOT, rel), 'rb') as f:
         return 'data:%s;base64,%s' % (mime, base64.b64encode(f.read()).decode())
 html = open(os.path.join(ROOT, 'build', 'template.html'), encoding='utf-8').read()
+html = html.replace('{{MARK_BROWN}}', b64('assets/hadara-mark-brown.png', 'image/png'))
 html = html.replace('{{MARK}}', b64('assets/hadara-mark.png', 'image/png'))
 html = html.replace('{{WORDMARK}}', b64('assets/hadara-wordmark.png', 'image/png'))
 html = html.replace('{{PHOTO_SIGN}}', b64('assets/photo-sign.jpg', 'image/jpeg'))
