@@ -129,7 +129,7 @@ nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(12px);-webkit-ba
 .hero p.lede b{font-weight:400;color:var(--gold)}
 .btn.order{flex-direction:column;gap:.2rem;line-height:1.1;padding:.85rem 2rem}
 .btn.order b{font-weight:500}
-.btn.order small{font-weight:400;font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;opacity:.72}
+.btn.order small{font-weight:500;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;opacity:.95}
 .nav-links .btn.order{padding:.5rem 1rem}
 .nav-links .btn.order small{font-size:.48rem}
 .order-cta{display:inline-flex;margin-top:2.2rem}
@@ -139,23 +139,24 @@ nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(12px);-webkit-ba
 .quick a:hover{border-color:var(--gold);background:rgba(226,199,144,.1);color:var(--gold)}
 .quick .ico{width:15px;height:15px;color:var(--gold)}
 /* arched sign photo */
-.arch-wrap{width:min(400px,100%);margin-left:auto}
+.arch-wrap{width:min(420px,100%);margin-left:auto;padding:12px}
 .arch-photo{position:relative;aspect-ratio:4/5;border-radius:var(--arch);overflow:hidden;border:1px solid var(--line-strong);box-shadow:0 0 0 10px var(--ink),0 0 0 11px var(--line)}
-.arch-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transform:scale(1.02)}
+.arch-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
 .arch-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.05),rgba(10,10,10,.35) 100%)}
 .arch-wrap .cap{margin-top:1.4rem;text-align:center;font-family:var(--kufi);font-size:1.5rem;color:var(--gold);line-height:1.1}
 .arch-wrap .cap small{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;color:var(--sand);opacity:.75;margin-top:.3rem}
 
 /* ---------- MARQUEE ---------- */
-.marquee{background:var(--gold);color:var(--ink);overflow:hidden;white-space:nowrap;padding:.42rem 0;border-block:1px solid var(--gold-deep);position:relative;z-index:2}
+.marquee{background:var(--gold);color:var(--ink);overflow:hidden;white-space:nowrap;padding:.18rem 0;border-block:1px solid var(--gold-deep);position:relative;z-index:2}
 .marquee-track{display:inline-flex;animation:scroll 42s linear infinite;will-change:transform}
-.marquee span{font-family:var(--sans);font-weight:500;font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;padding:0 1.2rem;display:inline-flex;align-items:center;gap:1.2rem}
-.marquee span.ar{font-family:var(--kufi);letter-spacing:0;font-size:.9rem;text-transform:none;font-weight:700}
+.marquee span{font-family:var(--sans);font-weight:500;font-size:.6rem;line-height:1.4;letter-spacing:.3em;text-transform:uppercase;padding:0 1.2rem;display:inline-flex;align-items:center;gap:1.2rem}
+.marquee span.ar{font-family:var(--kufi);letter-spacing:0;font-size:.82rem;line-height:1;text-transform:none;font-weight:700}
 .marquee span::after{content:"";width:5px;height:5px;background:var(--ink);transform:rotate(45deg);flex:none}
 @keyframes scroll{to{transform:translateX(-50%)}}
 
 /* ---------- SECTION HEADS ---------- */
-section{position:relative}
+section{position:relative;overflow-x:clip}
+footer{overflow-x:clip}
 .sec-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:2.6rem;flex-wrap:wrap;position:relative}
 .sec-head h2{font-size:clamp(2.4rem,4.8vw,4.4rem);margin-top:1rem;max-width:14ch}
 .sec-head p{max-width:26rem;color:rgba(241,230,204,.72)}
@@ -197,7 +198,7 @@ section{position:relative}
 .cup p{font-size:.93rem;color:rgba(241,230,204,.72);min-height:5.2em}
 .cup .notes{margin-top:1.3rem;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
 .menu-note{margin-top:2.6rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;padding:1.6rem 2rem;border:1px solid var(--gold);position:relative;background:var(--ink)}
-.menu-note::before{content:"";position:absolute;inset:6px;border:1px solid var(--line);pointer-events:none}
+.menu-note{box-shadow:inset 0 0 0 6px var(--ink),inset 0 0 0 7px var(--line)}
 .menu-note p{font-family:var(--serif);font-size:1.5rem;color:var(--sand);line-height:1.2}
 .menu-note p em{color:var(--gold)}
 .menu-note small{display:block;margin-top:.4rem;font-family:var(--sans);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85}
@@ -272,15 +273,20 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
 .foot-bottom a:hover{color:var(--gold)}
 
 /* ---------- FLOATING ORDER BUTTON ---------- */
-.fab{position:fixed;right:14px;bottom:14px;z-index:60;display:flex;align-items:center;gap:.55rem;padding:.5rem .95rem .5rem .55rem;background:var(--gold);color:var(--ink);border:1px solid var(--gold-deep);box-shadow:0 12px 36px rgba(0,0,0,.55),0 0 0 4px rgba(10,10,10,.85);transition:transform .3s,background .3s}
+.fab{position:fixed;right:14px;bottom:14px;z-index:60;display:flex;align-items:center;gap:.55rem;padding:.5rem .95rem .5rem .55rem;background:var(--gold);color:var(--ink);border:1px solid var(--gold-deep);box-shadow:0 12px 36px rgba(0,0,0,.55),0 0 0 4px rgba(10,10,10,.85);transition:transform .35s,opacity .35s,background .3s}
 .fab:hover{transform:translateY(-3px);background:var(--sand)}
+.fab.hide{transform:translateY(160%);opacity:0;pointer-events:none}
 .fab img{height:24px;width:auto;filter:brightness(0);opacity:.85}
 .fab b{display:block;font-weight:500;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;line-height:1.1}
-.fab small{display:block;font-size:.46rem;letter-spacing:.18em;text-transform:uppercase;opacity:.72;margin-top:.15rem}
+.fab small{display:block;font-size:.48rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;opacity:.9;margin-top:.15rem}
 
 /* ---------- Reveal ---------- */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
-.rv.in{opacity:1;transform:none}
+/* Entrance: a gold curtain sweeps across and the section is uncovered behind it */
+.rv{position:relative;visibility:hidden;transform:translateY(16px);transition:visibility 0s linear .5s,transform .8s cubic-bezier(.2,.7,.2,1) .5s}
+.rv::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--gold-deep),var(--gold) 45%,var(--sand));z-index:5;pointer-events:none;visibility:hidden;transform:translateX(-102%)}
+.rv.in{visibility:visible;transform:none}
+.rv.in::before{animation:sweep 1s cubic-bezier(.77,0,.18,1) forwards}
+@keyframes sweep{0%{transform:translateX(-102%);visibility:visible}99%{visibility:visible}100%{transform:translateX(102%);visibility:hidden}}
 
 /* ---------- Responsive ---------- */
 @media (max-width:1024px){.hero-grid{gap:3rem}.story-grid{gap:3rem}}
@@ -311,8 +317,8 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
 @media (max-width:640px){
   .wrap{width:min(1200px,88vw)}
   .rail{scroll-padding-left:6vw;padding-left:6vw;padding-right:6vw}
-  .marquee span{font-size:.58rem;padding:0 .9rem;gap:.9rem}
-  .marquee span.ar{font-size:.8rem}
+  .marquee span{font-size:.54rem;padding:0 .8rem;gap:.8rem}
+  .marquee span.ar{font-size:.74rem}
   .menu-note{padding:1.3rem 1.2rem}
   .menu-note p{font-size:1.3rem}
   .foot-bottom{justify-content:center;text-align:center}
@@ -321,7 +327,8 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *{animation:none!important;transition:none!important}
-  .rv{opacity:1;transform:none}
+  .rv{visibility:visible;transform:none}
+  .rv::before{display:none}
 }
 </style>
 </head>
@@ -347,7 +354,6 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
       <a href="https://www.google.com/maps/dir/?api=1&destination=5052+West+Ln+Ste+4+Stockton+CA+95210" target="_blank" rel="noopener">Directions</a>
       <a href="#follow">Follow</a>
       <a class="js-review" href="#follow" target="_blank" rel="noopener">Review</a>
-      <a class="btn solid order js-order" href="#visit"><b>Order Ahead</b><small>Pickup &amp; delivery available</small></a>
     </div>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 24 24" aria-hidden="true"><g class="m"><path d="M3 4h18"/><path d="M3 11h10v9h8"/><path d="M3 18h5"/><path d="M17 4v4h4"/></g><g class="x"><path d="M5 5l14 14M19 5L5 19"/></g></svg></button>
   </div>
@@ -363,7 +369,7 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
 </div>
 <header class="hero">
   <div class="wrap hero-grid">
-    <div>
+    <div class="rv">
       <div class="eyebrow rule">Yemeni Coffee House · Stockton, CA · The 209</div>
       <h1>Civilization,<br>poured <em>by the cup.</em></h1>
       <p class="lede"><b>Hadara — حضارة — means civilization.</b> Authentic Yemeni coffee, chai, crepes and desserts, brewed the way the birthplace of coffee has poured it for centuries. On West Lane in Stockton.</p>
@@ -378,7 +384,7 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
       </div>
     </div>
     <figure class="arch-wrap rv">
-      <div class="arch-photo"><img id="heroSign" src="{{PHOTO_SIGN}}" alt="Hadara's black blade sign with the gold Kufic mark outside the shop on West Lane" width="1000" height="810"></div>
+      <div class="arch-photo"><img id="heroSign" src="{{PHOTO_SIGN}}" alt="Hadara's black blade sign with the gold Kufic mark outside the shop on West Lane" width="900" height="1125"></div>
       <figcaption class="cap">حضارة<small>Hadara · West Ln</small></figcaption>
     </figure>
   </div>
@@ -534,6 +540,14 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
   b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu')});
   l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');b.setAttribute('aria-expanded','false')})});
   document.getElementById('yr').textContent=new Date().getFullYear();
+
+  /* Floating order button: only when no other Order Ahead button is on screen */
+  var fab=document.querySelector('.fab'), orderBtns=document.querySelectorAll('.js-order:not(.fab)');
+  if(fab&&'IntersectionObserver' in window){
+    var seen=[];
+    var fo=new IntersectionObserver(function(es){es.forEach(function(e){var i=seen.indexOf(e.target);if(e.isIntersecting){if(i<0)seen.push(e.target)}else if(i>=0){seen.splice(i,1)}});fab.classList.toggle('hide',seen.length>0)},{threshold:.4});
+    orderBtns.forEach(function(el){fo.observe(el)});
+  }
 
   /* Reveal */
   var els=document.querySelectorAll('.rv');
