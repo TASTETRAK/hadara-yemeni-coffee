@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hadara Yemeni Coffee — حضارة | Stockton, CA</title>
+<meta name="description" content="Hadara Yemeni Coffee (حضارة) — Stockton's first Yemeni coffee house. Authentic Yemeni coffee on West Lane: 5052 West Ln, Ste 4, Stockton, CA 95210.">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:title" content="Hadara Yemeni Coffee — حضارة">
+<meta property="og:description" content="Authentic Yemeni coffee in Stockton, CA. Hadara means civilization.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   HADARA YEMENI COFFEE — حضارة — Stockton, CA
+   Single-file site built by Tastetrak. All CSS inlined, images embedded.
+   Search this file for "CONFIRM:" before go-live.
+   ===================================================================== */
+:root{
+  --ink:#0A0A0A; --ink-2:#121110; --ink-3:#1A1815;
+  --gold:#E2C790; --gold-deep:#B89A5E; --sand:#F1E6CC; --bean:#3A2416;
+  --line:rgba(226,199,144,.16); --line-strong:rgba(226,199,144,.42);
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Jost','Helvetica Neue',Arial,sans-serif;
+  --kufi:'Reem Kufi','Noto Kufi Arabic',sans-serif;
+  --kufic:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23E2C790' stroke-width='3'%3E%3Cpath d='M4.5 4.5h21v21h-9v-9h-3v18h-9zM46.5 4.5h21v9h-12v3h12v9h-21zM4.5 46.5h9v12h3v-12h9v21h-21zM46.5 46.5h21v21h-9v-12h-3v12h-9z'/%3E%3Cpath d='M36 27v18M27 36h18'/%3E%3C/g%3E%3C/svg%3E");
+  --kufic-dark:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%230A0A0A' stroke-width='3'%3E%3Cpath d='M4.5 4.5h21v21h-9v-9h-3v18h-9zM46.5 4.5h21v9h-12v3h12v9h-21zM4.5 46.5h9v12h3v-12h9v21h-21zM46.5 46.5h21v21h-9v-12h-3v12h-9z'/%3E%3Cpath d='M36 27v18M27 36h18'/%3E%3C/g%3E%3C/svg%3E");
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--sand);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:var(--ink)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{width:min(1200px,90vw);margin:0 auto}
+.ar{font-family:var(--kufi);direction:rtl;unicode-bidi:isolate}
+.eyebrow{font-family:var(--sans);font-weight:400;font-size:.7rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold)}
+.eyebrow.rule{display:flex;align-items:center;gap:1rem}
+.eyebrow.rule::before{content:"";width:42px;height:1px;background:var(--gold);flex:none}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.02;color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.7rem;padding:1rem 1.9rem;font-family:var(--sans);font-weight:500;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;border:1px solid var(--gold);transition:background .3s,color .3s,transform .3s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn.solid{background:var(--gold);color:var(--ink)}
+.btn.solid:hover{background:var(--sand)}
+.btn.line{color:var(--gold)}
+.btn.line:hover{background:var(--gold);color:var(--ink)}
+.diamond{display:inline-block;width:8px;height:8px;border:1px solid currentColor;transform:rotate(45deg)}
+
+/* ---------- NAV ---------- */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;border-bottom:1px solid transparent;transition:background .4s,border-color .4s}
+nav.scrolled{background:rgba(10,10,10,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:84px}
+.brand{display:flex;align-items:center;gap:.9rem}
+.brand img{height:46px;width:auto}
+.brand span{font-family:var(--serif);font-weight:700;font-size:1.55rem;letter-spacing:.16em;color:var(--gold)}
+.nav-links{display:flex;gap:2.4rem;align-items:center}
+.nav-links a{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--sand);opacity:.85;transition:opacity .2s,color .2s}
+.nav-links a:hover{opacity:1;color:var(--gold)}
+.nav-links .btn{padding:.75rem 1.3rem;opacity:1}
+.burger{display:none;background:none;border:1px solid var(--line-strong);color:var(--gold);width:44px;height:44px;cursor:pointer;place-items:center}
+.burger span{display:block;width:18px;height:1px;background:var(--gold);box-shadow:0 -6px 0 var(--gold),0 6px 0 var(--gold)}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:100vh;display:grid;align-items:center;padding:130px 0 80px;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background:var(--kufic);background-size:72px;opacity:.03;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 74% 55%,rgba(226,199,144,.12),transparent 70%),linear-gradient(180deg,rgba(10,10,10,0) 60%,var(--ink) 100%);z-index:-1}
+.hero-arabic{position:absolute;right:-2vw;bottom:-7vw;font-family:var(--kufi);font-weight:700;font-size:clamp(11rem,30vw,28rem);line-height:1;color:var(--gold);opacity:.04;pointer-events:none;z-index:-1;direction:rtl}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}
+.status{display:inline-flex;align-items:center;gap:.7rem;margin-bottom:1.6rem;padding:.45rem 1rem .45rem .7rem;border:1px solid var(--line-strong);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.status i{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 0 3px rgba(226,199,144,.18)}
+.hero h1{font-size:clamp(3.1rem,6.8vw,6.6rem);margin:1.4rem 0 1.8rem;letter-spacing:-.012em}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--sand)}
+.hero p.lede{max-width:34rem;font-size:1.1rem;color:rgba(241,230,204,.78)}
+.hero p.lede b{font-weight:400;color:var(--gold)}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.6rem}
+.hero-meta{display:flex;gap:2.8rem;margin-top:3.4rem;padding-top:1.8rem;border-top:1px solid var(--line);flex-wrap:wrap}
+.hero-meta b{display:block;font-family:var(--serif);font-size:2rem;font-weight:600;color:var(--gold);line-height:1}
+.hero-meta b.ar{font-family:var(--kufi);font-weight:700;font-size:1.9rem}
+.hero-meta small{display:block;margin-top:.35rem;font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;opacity:.6}
+
+/* Qamariya window: the arched Yemeni fanlight, drawn in with SVG lines */
+.qamariya{position:relative;width:min(440px,100%);margin-left:auto;aspect-ratio:460/660}
+.qamariya svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.qamariya .mark{position:absolute;left:50%;top:66%;transform:translate(-50%,-50%);width:25%;filter:drop-shadow(0 0 28px rgba(226,199,144,.25))}
+.qamariya .glow{position:absolute;left:50%;top:38%;width:70%;aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(226,199,144,.16),transparent 62%);pointer-events:none}
+.d{stroke:var(--gold);fill:none;stroke-linecap:square;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.8s cubic-bezier(.65,.05,.25,1) forwards}
+.d.s1{animation-delay:.1s}.d.s2{animation-delay:.5s}.d.s3{animation-delay:.9s}.d.s4{animation-delay:1.2s}.d.s5{animation-delay:1.5s}
+.pane{fill:var(--gold);opacity:0;animation:fade 1.6s ease 1.7s forwards}
+.pane.p1{--o:.16}.pane.p2{--o:.08}.pane.p3{--o:.12}.pane.p4{--o:.06}
+.fadein{opacity:0;animation:fade 1.4s ease 1.6s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:var(--o,1)}}
+
+/* ---------- MARQUEE ---------- */
+.marquee{background:var(--gold);color:var(--ink);overflow:hidden;white-space:nowrap;padding:1.05rem 0;border-block:1px solid var(--gold-deep);position:relative;z-index:2}
+.marquee-track{display:inline-flex;animation:scroll 42s linear infinite;will-change:transform}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee span{font-family:var(--serif);font-weight:700;font-size:1.45rem;letter-spacing:.2em;text-transform:uppercase;padding:0 2rem;display:inline-flex;align-items:center;gap:2rem}
+.marquee span.ar{font-family:var(--kufi);letter-spacing:0;font-size:1.55rem;text-transform:none}
+.marquee span::after{content:"";width:9px;height:9px;background:var(--ink);transform:rotate(45deg);flex:none}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- STORY ---------- */
+section{position:relative}
+.story{padding:9rem 0;background:var(--ink-2)}
+.story-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:6rem;align-items:start}
+.story h2{font-size:clamp(2.6rem,4.8vw,4.6rem);margin-top:1.4rem}
+.story h2 .ar{display:block;font-weight:700;font-size:.72em;color:var(--sand);opacity:.9;margin-top:.7rem;text-align:left}
+.story-body p{font-size:1.1rem;color:rgba(241,230,204,.78);margin-bottom:1.4rem}
+.story-body p:first-child::first-letter{font-family:var(--serif);font-weight:700;float:left;font-size:4.8rem;line-height:.78;padding:.45rem .7rem 0 0;color:var(--gold)}
+.quote{margin:2.4rem 0 0;padding:1.8rem 2rem;border-left:2px solid var(--gold);background:rgba(226,199,144,.05)}
+.quote p{font-family:var(--serif);font-style:italic;font-size:1.45rem;line-height:1.35;color:var(--sand);margin:0}
+.quote cite{display:block;margin-top:.8rem;font-style:normal;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:3rem;border:1px solid var(--line)}
+.stat{padding:1.8rem 1.4rem;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:var(--serif);font-weight:700;font-size:2.3rem;color:var(--gold);line-height:1}
+.stat b.ar{font-family:var(--kufi);text-align:left}
+.stat small{display:block;margin-top:.6rem;font-size:.82rem;line-height:1.5;opacity:.7}
+
+/* ---------- THE COFFEE ---------- */
+.coffee{padding:9rem 0;background:var(--ink)}
+.coffee::before{content:"";position:absolute;inset:0;background:var(--kufic);background-size:72px;opacity:.035;pointer-events:none}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:4rem;flex-wrap:wrap;position:relative}
+.sec-head h2{font-size:clamp(2.6rem,5vw,4.8rem);margin-top:1.2rem;max-width:14ch}
+.sec-head p{max-width:26rem;color:rgba(241,230,204,.72)}
+.cups{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);position:relative}
+.cup{background:var(--ink);padding:2.8rem 2.2rem 2.4rem;position:relative;transition:background .4s;overflow:hidden}
+.cup::after{content:"";position:absolute;right:-30px;bottom:-30px;width:120px;height:120px;background:var(--kufic);background-size:40px;opacity:0;transition:opacity .5s}
+.cup:hover{background:var(--ink-3)}
+.cup:hover::after{opacity:.12}
+.cup .num{font-family:var(--serif);font-style:italic;color:var(--gold-deep);font-size:1.05rem}
+.cup .ar{position:absolute;top:2.1rem;right:2.2rem;font-size:1.6rem;color:var(--gold);opacity:.4}
+.cup h3{font-size:2.1rem;margin:1.8rem 0 .9rem}
+.cup p{font-size:.96rem;color:rgba(241,230,204,.7)}
+.cup .notes{margin-top:1.6rem;font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.menu-note{margin-top:2.6rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;padding:1.8rem 2.2rem;border:1px solid var(--gold);position:relative;background:var(--ink)}
+.menu-note::before{content:"";position:absolute;inset:6px;border:1px solid var(--line);pointer-events:none}
+.menu-note p{font-family:var(--serif);font-size:1.6rem;color:var(--sand);line-height:1.2}
+.menu-note p em{color:var(--gold)}
+.menu-note small{display:block;margin-top:.5rem;font-family:var(--sans);font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85}
+
+/* ---------- GALLERY ---------- */
+.gallery{padding:0 0 9rem;background:var(--ink)}
+.g-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:118px;gap:14px}
+.tile{position:relative;overflow:hidden;background:linear-gradient(145deg,#1d1813,#0f0d0b);border:1px solid var(--line);display:flex;align-items:flex-end;padding:1.3rem}
+.tile::before{content:"";position:absolute;inset:0;background:var(--kufic);background-size:72px;opacity:.07;transition:opacity .5s,transform 1.4s}
+.tile:hover::before{opacity:.14;transform:scale(1.08)}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.tile:hover img{transform:scale(1.04)}
+.tile.photo::before{display:none}
+.tile.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,0) 50%,rgba(10,10,10,.78) 100%);pointer-events:none}
+.tile .lbl{position:relative;z-index:1;font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.7rem}
+.tile .lbl::before{content:"";display:inline-block;width:8px;height:8px;border:1px solid var(--gold);transform:rotate(45deg);flex:none}
+.tile .ph{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:54px;height:54px;border:1px solid var(--line-strong);rotate:45deg;display:grid;place-items:center}
+.tile .ph::after{content:"";width:18px;height:18px;border:1px solid var(--gold)}
+.t1{grid-column:span 7;grid-row:span 4}.t2{grid-column:span 5;grid-row:span 2}.t3{grid-column:span 5;grid-row:span 2}
+.t4{grid-column:span 4;grid-row:span 3}.t5{grid-column:span 4;grid-row:span 3}.t6{grid-column:span 4;grid-row:span 3}
+
+/* ---------- VISIT ---------- */
+.visit{background:var(--sand);color:var(--ink);padding:9rem 0;overflow:hidden}
+.visit::before{content:"";position:absolute;inset:0;background:var(--kufic-dark);background-size:72px;opacity:.035;pointer-events:none}
+.visit .wrap{position:relative}
+.visit h2{color:var(--ink);font-size:clamp(2.8rem,5.4vw,5.2rem);margin:1.2rem 0 2.4rem}
+.visit .eyebrow{color:var(--bean)}
+.visit .eyebrow.rule::before{background:var(--bean)}
+.visit-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:stretch}
+.info{display:grid;gap:1.8rem}
+.info-row{display:grid;grid-template-columns:120px 1fr;gap:1.4rem;padding-bottom:1.6rem;border-bottom:1px solid rgba(10,10,10,.16)}
+.info-row h4{font-family:var(--sans);font-weight:500;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--bean);padding-top:.35rem}
+.info-row p{font-family:var(--serif);font-size:1.45rem;font-weight:500;line-height:1.3}
+.info-row p a:hover{color:var(--bean);text-decoration:underline;text-underline-offset:4px}
+.info-row p small{display:block;font-family:var(--sans);font-size:.85rem;font-weight:300;opacity:.68;margin-top:.35rem;line-height:1.5}
+.visit .btn.solid{background:var(--ink);color:var(--gold);border-color:var(--ink)}
+.visit .btn.solid:hover{background:var(--bean);border-color:var(--bean)}
+.visit .btn.line{color:var(--ink);border-color:var(--ink)}
+.visit .btn.line:hover{background:var(--ink);color:var(--gold)}
+.map{position:relative;border:1px solid var(--ink);min-height:480px;background:var(--ink)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) sepia(.35) contrast(1.05)}
+.map::after{content:"";position:absolute;inset:14px;border:1px solid rgba(226,199,144,.65);pointer-events:none}
+.map .pin{position:absolute;left:14px;bottom:14px;background:var(--ink);color:var(--gold);padding:.6rem 1rem;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;z-index:1}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--ink);padding:6rem 0 2.4rem;text-align:center;position:relative;overflow:hidden}
+footer::before{content:"";position:absolute;inset:0;background:var(--kufic);background-size:72px;opacity:.04;pointer-events:none}
+footer .wrap{position:relative}
+footer .lock{width:min(400px,70vw);margin:0 auto}
+footer .ar{font-size:2.3rem;color:var(--gold);margin:2.2rem 0 .3rem;font-weight:700}
+footer .tag{font-family:var(--serif);font-style:italic;font-size:1.35rem;opacity:.78}
+.socials{display:flex;justify-content:center;gap:1rem;margin:2.6rem 0 4rem}
+.socials a{width:48px;height:48px;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold);transition:border-color .3s,background .3s}
+.socials a:hover{border-color:var(--gold);background:rgba(226,199,144,.12)}
+.socials svg{width:18px;height:18px;fill:currentColor}
+.foot-bottom{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:2rem;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;opacity:.55}
+.foot-bottom a:hover{color:var(--gold)}
+
+/* ---------- Scroll reveal ---------- */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1024px){
+  .hero-grid{grid-template-columns:1fr 1fr;gap:3rem}
+  .story-grid{gap:4rem}
+}
+@media (max-width:900px){
+  .hero{padding-top:120px}
+  .hero-grid,.story-grid,.visit-grid{grid-template-columns:1fr;gap:3.4rem}
+  .qamariya{margin:0 auto;width:min(340px,82vw)}
+  .cups{grid-template-columns:1fr 1fr}
+  .nav-links{position:fixed;inset:84px 0 auto 0;flex-direction:column;align-items:stretch;background:var(--ink);padding:1.6rem 5vw 2rem;gap:1.4rem;border-bottom:1px solid var(--line);transform:translateY(-130%);visibility:hidden;transition:transform .4s,visibility 0s .4s;z-index:40}
+  .nav-links a{padding:.3rem 0}
+  .nav-links.open{transform:none;visibility:visible;transition:transform .4s,visibility 0s}
+  .burger{display:grid}
+  .stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}
+  .info-row{grid-template-columns:1fr;gap:.4rem}
+  .map{min-height:380px}
+}
+@media (max-width:640px){
+  .wrap{width:min(1200px,88vw)}
+  .cups{grid-template-columns:1fr}
+  .g-grid{grid-auto-rows:88px;gap:10px}
+  .t1,.t2,.t3,.t4,.t5,.t6{grid-column:span 12}
+  .t1{grid-row:span 3}.t2,.t3{grid-row:span 2}.t4,.t5,.t6{grid-row:span 2}
+  .hero-meta{gap:1.6rem 2rem}
+  .status{font-size:.56rem;letter-spacing:.22em;line-height:1.5}
+  .hero-ctas .btn{flex:1 1 100%}
+  .story,.coffee,.visit{padding:6rem 0}
+  .gallery{padding-bottom:6rem}
+  .marquee span{font-size:1.15rem;padding:0 1.2rem;gap:1.2rem}
+  .menu-note{padding:1.5rem 1.4rem}
+  footer{padding-top:4.5rem}
+  .foot-bottom{justify-content:center;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+  .d{stroke-dashoffset:0}
+  .pane{opacity:var(--o,1)}
+  .fadein,.rv{opacity:1;transform:none}
+  .marquee-track{animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- =====================================================================
+  HADARA YEMENI COFFEE — حضارة — 5052 West Ln, Ste 4, Stockton, CA 95210
+  Built by Tastetrak. Anything marked  CONFIRM  must be verified with the
+  owner before go-live. Research sources are listed in README.md.
+  Do NOT add a floating order button here — BobCRM injects its own.
+===================================================================== -->
+
+<nav id="nav" aria-label="Main">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand" aria-label="Hadara Yemeni Coffee — home">
+      <img src="{{MARK}}" alt="Hadara mark: the word حضارة in square Kufic" width="297" height="505">
+      <span>HADARA</span>
+    </a>
+    <div class="nav-links" id="links">
+      <a href="#story">Our Story</a>
+      <a href="#coffee">The Coffee</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#visit">Visit</a>
+      <!-- CONFIRM: no online-ordering link was found (no DoorDash / Uber Eats / Grubhub / Toast listing as of Nov 2026). Replace href with the real order-ahead URL. -->
+      <a href="#visit" class="btn solid">Order Ahead</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="links"><span></span></button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-arabic" aria-hidden="true">حضارة</div>
+  <div class="wrap hero-grid">
+    <div>
+      <!-- CONFIRM: opening status. As of 18 Oct 2026 the shop's own TikTok (@hadara_coffee) still said "as we prepare to open our doors". Update or remove once open. -->
+      <div class="status"><i></i> Opening soon on West Lane · Stockton, CA</div>
+      <!-- CONFIRM: "first Yemeni coffee house in the 209" is the shop's own claim (TikTok, May 2026); a Merced café has made a similar claim. -->
+      <div class="eyebrow rule">The First Yemeni Coffee House in the 209</div>
+      <h1>Civilization,<br>poured <em>by the cup.</em></h1>
+      <p class="lede"><b>Hadara — حضارة — means civilization.</b> We brew the coffee of Yemen, the land that first gave coffee to the world: slow-brewed, warmly spiced, and made to be shared. Right here on West Lane in Stockton.</p>
+      <div class="hero-ctas">
+        <!-- CONFIRM: order-ahead link (see nav) -->
+        <a href="#visit" class="btn solid">Order Ahead</a>
+        <a href="#coffee" class="btn line">Explore the Coffee</a>
+      </div>
+      <div class="hero-meta">
+        <div><b class="ar">حضارة</b><small>Civilization</small></div>
+        <div><b>Yemen</b><small>Birthplace of coffee</small></div>
+        <div><b>209</b><small>Stockton, California</small></div>
+      </div>
+    </div>
+
+    <div class="qamariya" aria-hidden="true">
+      <div class="glow"></div>
+      <svg viewBox="0 0 460 660" fill="none">
+        <!-- outer Sana'a window: rectangular body with a semicircular qamariya fanlight -->
+        <path class="d s1" pathLength="1" stroke-width="2" d="M30 640 V250 A200 200 0 0 1 430 250 V640 Z"/>
+        <path class="d s2" pathLength="1" stroke-width="1" opacity=".55" d="M52 620 V252 A178 178 0 0 1 408 252 V620 Z"/>
+        <!-- spring line -->
+        <path class="d s2" pathLength="1" stroke-width="1" d="M52 250 H408"/>
+        <path class="d s3" pathLength="1" stroke-width="1" opacity=".6" d="M52 268 H408"/>
+        <!-- fanlight tracery: concentric arcs -->
+        <path class="d s3" pathLength="1" stroke-width="1.2" d="M70 250 A160 160 0 0 1 390 250"/>
+        <path class="d s3" pathLength="1" stroke-width="1.2" d="M120 250 A110 110 0 0 1 340 250"/>
+        <path class="d s4" pathLength="1" stroke-width="1.2" d="M170 250 A60 60 0 0 1 290 250"/>
+        <!-- radial mullions -->
+        <path class="d s4" pathLength="1" stroke-width="1.2" d="M230 250 V72 M230 250 L104 124 M230 250 L356 124 M230 250 L65.5 182 M230 250 L394.5 182 M230 250 L162 85.5 M230 250 L298 85.5"/>
+        <!-- alabaster "glass" panes -->
+        <path class="pane p1" d="M230 250 L230 140 A110 110 0 0 1 272.1 148.4 Z"/>
+        <path class="pane p2" d="M230 250 L152.2 172.2 A110 110 0 0 1 187.9 148.4 Z"/>
+        <path class="pane p3" d="M230 250 L343.1 148.4 A160 160 0 0 1 390 250 L340 250 A110 110 0 0 0 307.8 172.2 Z"/>
+        <path class="pane p4" d="M230 250 L70 250 A160 160 0 0 1 116.9 148.4 L152.2 172.2 A110 110 0 0 0 120 250 Z"/>
+        <path class="pane p2" d="M230 250 L170 250 A60 60 0 0 1 187.6 207.6 Z"/>
+        <path class="pane p1" d="M230 250 L272.4 207.6 A60 60 0 0 1 290 250 Z"/>
+        <!-- keystone -->
+        <circle class="d s5" pathLength="1" cx="230" cy="250" r="22" stroke-width="1.2"/>
+        <rect class="d s5" pathLength="1" x="222" y="242" width="16" height="16" stroke-width="1" transform="rotate(45 230 250)"/>
+        <!-- sill band of diamonds -->
+        <g class="fadein" fill="#E2C790" opacity=".85">
+          <rect x="86" y="596" width="7" height="7" transform="rotate(45 89.5 599.5)"/>
+          <rect x="146" y="596" width="7" height="7" transform="rotate(45 149.5 599.5)"/>
+          <rect x="206" y="596" width="7" height="7" transform="rotate(45 209.5 599.5)"/>
+          <rect x="246" y="596" width="7" height="7" transform="rotate(45 249.5 599.5)"/>
+          <rect x="306" y="596" width="7" height="7" transform="rotate(45 309.5 599.5)"/>
+          <rect x="366" y="596" width="7" height="7" transform="rotate(45 369.5 599.5)"/>
+        </g>
+        <!-- corner Kufic brackets -->
+        <path class="d s5" pathLength="1" stroke-width="1.5" d="M30 640 H10 V560 M430 640 H450 V560"/>
+      </svg>
+      <img class="mark fadein" src="{{MARK}}" alt="" width="297" height="505">
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Hadara</span><span class="ar">حضارة</span><span>Yemeni Coffee</span><span>Stockton · The 209</span><span class="ar">قهوة يمنية</span><span>Sustainably Sourced</span><span>Made With Passion</span>
+    <span>Hadara</span><span class="ar">حضارة</span><span>Yemeni Coffee</span><span>Stockton · The 209</span><span class="ar">قهوة يمنية</span><span>Sustainably Sourced</span><span>Made With Passion</span>
+  </div>
+</div>
+
+<section class="story" id="story">
+  <div class="wrap story-grid">
+    <div class="rv">
+      <div class="eyebrow rule">Our Story</div>
+      <h2>A name that carries a civilization.<span class="ar">حضارة</span></h2>
+      <!-- CONFIRM: public Yelp review quoted with attribution; ask the owner whether they want customer quotes on the site. -->
+      <div class="quote">
+        <p>“Found them on TikTok, first Yemeni coffee shop in the 209 and I'm all here for it. So happy I don't have to drive all the way to the Bay for my Yemeni coffee fix!”</p>
+        <cite>Linda R. · Yelp</cite>
+      </div>
+    </div>
+    <div class="story-body rv d1">
+      <p>Long before coffee reached Europe, it was being roasted, brewed and shared in the highlands of Yemen and shipped to the world through the port of Mokha. Every cup of Yemeni coffee carries that history: slow extraction, warm spice, and the habit of sitting down together.</p>
+      <p>Hadara brings that tradition home to Stockton. For years, the 209 drove to the Bay for a proper cup of Yemeni coffee. We built this house on West Lane from the ground up so you don't have to: a place for long talks, late study sessions and good company, with coffee that is sustainably sourced and made with passion.</p>
+      <div class="stats">
+        <div class="stat"><b class="ar">حضارة</b><small>Hadara: the Arabic word for civilization</small></div>
+        <div class="stat"><b>Mokha</b><small>The Yemeni port that gave “mocha” its name</small></div>
+        <div class="stat"><b>2026</b><small>Built from the ground up on West Lane, Stockton</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="coffee" id="coffee">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="eyebrow rule">The Coffee</div>
+        <h2>A field guide to Yemeni coffee.</h2>
+      </div>
+      <p>New to Yemeni coffee? These are the classic styles poured in a Yemeni coffee house. Hadara's own menu is on its way. Ask the baristas what's brewing.</p>
+    </div>
+    <!-- CONFIRM: these six cards are an educational guide to classic Yemeni coffee-house styles, NOT Hadara's confirmed menu.
+         No real menu or prices were found online as of Nov 2026. Replace with the owner's menu when supplied. -->
+    <div class="cups rv">
+      <article class="cup"><span class="num">i.</span><span class="ar">قشر</span><h3>Qishr</h3><p>A light, golden brew made from the dried husk of the coffee cherry, simmered with ginger and spice. The oldest cup in Yemen.</p><div class="notes">Ginger · Husk · Warm spice</div></article>
+      <article class="cup"><span class="num">ii.</span><span class="ar">شاي عدني</span><h3>Adeni Chai</h3><p>Named for the port city of Aden: black tea simmered with milk, cardamom and spice until it turns rich and silky.</p><div class="notes">Cardamom · Milk · Black tea</div></article>
+      <article class="cup"><span class="num">iii.</span><span class="ar">مفوّر</span><h3>Mufawar</h3><p>Yemeni coffee brewed slowly with milk for a deep, smooth cup. The house favorite at Yemeni cafés everywhere.</p><div class="notes">Slow-brewed · Creamy · Bold</div></article>
+      <article class="cup"><span class="num">iv.</span><span class="ar">جباني</span><h3>Jubani</h3><p>Light-roast Yemeni coffee brewed together with the husk, cardamom, ginger and cinnamon. Fragrant and bright.</p><div class="notes">Light roast · Cinnamon · Ginger</div></article>
+      <article class="cup"><span class="num">v.</span><span class="ar">صنعاني</span><h3>Sana'ani</h3><p>Named for the old city of Sana'a: black Yemeni coffee with cardamom. Bold, aromatic and unsweetened unless you ask.</p><div class="notes">Black · Cardamom · Bold</div></article>
+      <!-- CONFIRM: "crepes, waffles, desserts" come from Hadara's own hiring post (TikTok, 18 Oct 2026), which lists Coffee · Crepes · Waffles · Desserts. Not a priced menu. -->
+      <article class="cup"><span class="num">vi.</span><span class="ar">حلويات</span><h3>Crepes &amp; Sweets</h3><p>Yemeni coffee is best with something sweet beside it. Hadara is preparing crepes, waffles and desserts to pair with every cup.</p><div class="notes">Crepes · Waffles · Desserts</div></article>
+    </div>
+    <div class="menu-note rv">
+      <!-- CONFIRM: menu link / PDF once the owner supplies it -->
+      <p>Full menu <em>coming soon.</em><small>Coffee · Crepes · Waffles · Desserts</small></p>
+      <a href="https://www.tiktok.com/@hadara_coffee" target="_blank" rel="noopener" class="btn line">Follow for the menu drop</a>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="sec-head rv"><div><div class="eyebrow rule">Inside Hadara</div><h2>The house of the cup.</h2></div><p>Gold on black, square Kufic and Yemeni geometry, poured into one room on West Lane.</p></div>
+    <!-- CONFIRM: the two photos below are stills from Hadara's own TikTok posts (@hadara_coffee, Aug 2026 and May 2026). Get the owner's OK or swap for their originals.
+         The remaining tiles are intentional placeholders: add <img src="..." alt="..."> inside a tile and add class="photo" to replace one. -->
+    <div class="g-grid rv">
+      <figure class="tile t1 photo"><img src="{{PHOTO_SIGN}}" alt="Hadara's black circular blade sign with the gold Kufic mark, hanging outside the shop on West Lane" loading="lazy"><figcaption class="lbl">The Sign · West Ln</figcaption></figure>
+      <figure class="tile t2 photo"><img src="{{PHOTO_WINDOW}}" alt="Storefront window vinyl reading HADARA Yemeni Coffee and حضارة" loading="lazy"><figcaption class="lbl">Storefront · Coming Soon</figcaption></figure>
+      <div class="tile t3"><span class="ph" aria-hidden="true"></span><span class="lbl">The Pour · Signature Cup</span></div>
+      <div class="tile t4"><span class="ph" aria-hidden="true"></span><span class="lbl">Interior</span></div>
+      <div class="tile t5"><span class="ph" aria-hidden="true"></span><span class="lbl">Crepes &amp; Desserts</span></div>
+      <div class="tile t6"><span class="ph" aria-hidden="true"></span><span class="lbl">The Team</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap visit-grid">
+    <div class="rv">
+      <div class="eyebrow rule">Visit Hadara</div>
+      <h2>Come sit. Stay a while.</h2>
+      <div class="info">
+        <div class="info-row"><h4>Address</h4><p><a href="https://www.google.com/maps/search/?api=1&query=Hadara+5052+West+Ln+Ste+4+Stockton+CA+95210" target="_blank" rel="noopener">5052 West Ln, Ste 4<br>Stockton, CA 95210</a><small>West Lane at Hammer Lane, in the same center as China Palace and Wingstop</small></p></div>
+        <!-- CONFIRM: hours. None published anywhere (Google, Yelp, MapQuest, TikTok) as of Nov 2026. -->
+        <div class="info-row"><h4>Hours</h4><p>Posted at opening<small>Follow @hadara_coffee for the opening date and daily hours</small></p></div>
+        <!-- CONFIRM: phone. No phone number has been published. Email is from Hadara's own hiring post (TikTok, 18 Oct 2026). -->
+        <div class="info-row"><h4>Contact</h4><p><a href="mailto:info@hadaracoffee.com">info@hadaracoffee.com</a><small>Phone number coming soon</small></p></div>
+        <!-- CONFIRM: Instagram handle. Hadara's hiring post says "DM us on Instagram" and a local reel tags @hadara_coffee, but the profile could not be opened to verify. -->
+        <div class="info-row"><h4>Follow</h4><p><a href="https://www.tiktok.com/@hadara_coffee" target="_blank" rel="noopener">TikTok @hadara_coffee</a><small><a href="https://www.instagram.com/hadara_coffee" target="_blank" rel="noopener">Instagram @hadara_coffee</a></small></p></div>
+      </div>
+      <div class="hero-ctas">
+        <a class="btn solid" href="https://www.google.com/maps/dir/?api=1&destination=5052+West+Ln+Ste+4+Stockton+CA+95210" target="_blank" rel="noopener">Get Directions →</a>
+        <a class="btn line" href="https://www.tiktok.com/@hadara_coffee" target="_blank" rel="noopener">@hadara_coffee</a>
+      </div>
+    </div>
+    <div class="map rv d1">
+      <iframe title="Map to Hadara Yemeni Coffee, 5052 West Ln Ste 4, Stockton CA" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=5052%20West%20Ln%20Ste%204%2C%20Stockton%2C%20CA%2095210&z=16&output=embed"></iframe>
+      <div class="pin">5052 West Ln · Stockton</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img class="lock" src="{{WORDMARK}}" alt="HADARA — Yemeni Coffee" width="1189" height="347">
+    <div class="ar">حضارة</div>
+    <p class="tag">Civilization, one cup at a time.</p>
+    <div class="socials">
+      <a href="https://www.tiktok.com/@hadara_coffee" target="_blank" rel="noopener" aria-label="Hadara on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 6.7a4.8 4.8 0 0 1-3.8-4.2V2h-3.4v13.6a2.9 2.9 0 1 1-2-2.7V9.4a6.3 6.3 0 1 0 5.4 6.2V8.7a8.2 8.2 0 0 0 3.8 1.2V6.7z"/></svg></a>
+      <!-- CONFIRM: Instagram handle -->
+      <a href="https://www.instagram.com/hadara_coffee" target="_blank" rel="noopener" aria-label="Hadara on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2.2c-2.7 0-3 0-4 .1C4.9 2.4 2.4 4.9 2.3 8c-.1 1-.1 1.3-.1 4s0 3 .1 4c.1 3.1 2.6 5.6 5.7 5.7 1 .1 1.3.1 4 .1s3 0 4-.1c3.1-.1 5.6-2.6 5.7-5.7.1-1 .1-1.3.1-4s0-3-.1-4C21.6 4.9 19.1 2.4 16 2.3c-1-.1-1.3-.1-4-.1zm0 1.8c2.6 0 2.9 0 4 .1 2.2.1 3.7 1.6 3.8 3.8.1 1 .1 1.3.1 4s0 3-.1 4c-.1 2.2-1.6 3.7-3.8 3.8-1 .1-1.3.1-4 .1s-3 0-4-.1c-2.2-.1-3.7-1.6-3.8-3.8-.1-1-.1-1.3-.1-4s0-3 .1-4C4.3 5.7 5.8 4.2 8 4.1c1-.1 1.3-.1 4-.1z"/></svg></a>
+      <a href="mailto:info@hadaracoffee.com" aria-label="Email Hadara"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2zm2 2v.6l8 5 8-5V7zm16 2.9-8 5-8-5V17h16z"/></svg></a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Hadara+5052+West+Ln+Ste+4+Stockton+CA" target="_blank" rel="noopener" aria-label="Hadara on Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></a>
+    </div>
+    <div class="foot-bottom"><span>© <span id="yr">2026</span> Hadara Yemeni Coffee · Stockton, CA</span><span>Site by <a href="https://tastetrak.com" target="_blank" rel="noopener">Tastetrak</a></span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('scrolled',window.scrollY>40)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var b=document.getElementById('burger'),l=document.getElementById('links');
+  b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu')});
+  l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){l.classList.remove('open');b.setAttribute('aria-expanded','false')})});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  } else { els.forEach(function(el){el.classList.add('in')}); }
+})();
+</script>
+</body>
+</html>
