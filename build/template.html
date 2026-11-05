@@ -77,7 +77,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--ink);color:var(--sand);font-family:var(--sans);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:84px}
+body{background:var(--ink);color:var(--sand);font-family:var(--sans);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:72px}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
@@ -108,11 +108,18 @@ nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(12px);-webkit-ba
 .nav-links a{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--sand);opacity:.85;transition:opacity .2s,color .2s}
 .nav-links a:hover{opacity:1;color:var(--gold)}
 .nav-links .btn{padding:.7rem 1.2rem;opacity:1}
-.burger{display:none;border:1px solid var(--line-strong);color:var(--gold);width:44px;height:44px;place-items:center}
-.burger span{display:block;width:18px;height:1px;background:var(--gold);box-shadow:0 -6px 0 var(--gold),0 6px 0 var(--gold)}
+.burger{display:none;position:relative;border:1px solid var(--gold);color:var(--gold);width:48px;height:48px;place-items:center;background:rgba(10,10,10,.6);transition:background .3s}
+.burger::before{content:"";position:absolute;inset:4px;border:1px solid var(--line);pointer-events:none}
+.burger svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:square;overflow:visible}
+.burger .m,.burger .x{transition:opacity .25s,transform .35s cubic-bezier(.65,.05,.25,1);transform-origin:50% 50%}
+.burger .x{opacity:0;transform:rotate(-45deg) scale(.6)}
+.burger[aria-expanded="true"]{background:var(--gold);color:var(--ink)}
+.burger[aria-expanded="true"] .m{opacity:0;transform:rotate(45deg) scale(.6)}
+.burger[aria-expanded="true"] .x{opacity:1;transform:none}
 
 /* ---------- HERO ---------- */
-.hero{position:relative;padding:118px 0 56px;overflow:hidden;isolation:isolate}
+.topband{padding-top:76px;background:var(--ink)}
+.hero{position:relative;padding:64px 0 56px;overflow:hidden;isolation:isolate}
 .hero::before{content:"";position:absolute;inset:0;background:var(--kufic);background-size:72px;opacity:.03;z-index:-2}
 .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 78% 45%,rgba(226,199,144,.10),transparent 70%);z-index:-1}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:4rem;align-items:center}
@@ -120,9 +127,13 @@ nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(12px);-webkit-ba
 .hero h1 em{font-style:italic;font-weight:500;color:var(--sand)}
 .hero p.lede{max-width:33rem;font-size:1.08rem;color:rgba(241,230,204,.8)}
 .hero p.lede b{font-weight:400;color:var(--gold)}
-.order-cta{display:inline-flex;flex-direction:column;align-items:center;margin-top:2.2rem}
-.order-cta .btn{padding:1.1rem 2.6rem;font-size:.78rem}
-.order-cta small{margin-top:.6rem;font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.9}
+.btn.order{flex-direction:column;gap:.2rem;line-height:1.1;padding:.85rem 2rem}
+.btn.order b{font-weight:500}
+.btn.order small{font-weight:400;font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;opacity:.72}
+.nav-links .btn.order{padding:.5rem 1rem}
+.nav-links .btn.order small{font-size:.48rem}
+.order-cta{display:inline-flex;margin-top:2.2rem}
+.order-cta .btn{padding:1rem 2.8rem;font-size:.8rem}
 .quick{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2.2rem;padding-top:1.6rem;border-top:1px solid var(--line)}
 .quick a{display:inline-flex;align-items:center;gap:.6rem;padding:.65rem 1rem;border:1px solid var(--line-strong);font-size:.62rem;letter-spacing:.26em;text-transform:uppercase;color:var(--sand);transition:border-color .3s,background .3s,color .3s}
 .quick a:hover{border-color:var(--gold);background:rgba(226,199,144,.1);color:var(--gold)}
@@ -136,11 +147,11 @@ nav.scrolled{background:rgba(10,10,10,.92);backdrop-filter:blur(12px);-webkit-ba
 .arch-wrap .cap small{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.34em;text-transform:uppercase;color:var(--sand);opacity:.75;margin-top:.3rem}
 
 /* ---------- MARQUEE ---------- */
-.marquee{background:var(--gold);color:var(--ink);overflow:hidden;white-space:nowrap;padding:.95rem 0;border-block:1px solid var(--gold-deep);position:relative;z-index:2}
+.marquee{background:var(--gold);color:var(--ink);overflow:hidden;white-space:nowrap;padding:.42rem 0;border-block:1px solid var(--gold-deep);position:relative;z-index:2}
 .marquee-track{display:inline-flex;animation:scroll 42s linear infinite;will-change:transform}
-.marquee span{font-family:var(--serif);font-weight:700;font-size:1.35rem;letter-spacing:.2em;text-transform:uppercase;padding:0 1.8rem;display:inline-flex;align-items:center;gap:1.8rem}
-.marquee span.ar{font-family:var(--kufi);letter-spacing:0;font-size:1.45rem;text-transform:none}
-.marquee span::after{content:"";width:8px;height:8px;background:var(--ink);transform:rotate(45deg);flex:none}
+.marquee span{font-family:var(--sans);font-weight:500;font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;padding:0 1.2rem;display:inline-flex;align-items:center;gap:1.2rem}
+.marquee span.ar{font-family:var(--kufi);letter-spacing:0;font-size:.9rem;text-transform:none;font-weight:700}
+.marquee span::after{content:"";width:5px;height:5px;background:var(--ink);transform:rotate(45deg);flex:none}
 @keyframes scroll{to{transform:translateX(-50%)}}
 
 /* ---------- SECTION HEADS ---------- */
@@ -261,11 +272,11 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
 .foot-bottom a:hover{color:var(--gold)}
 
 /* ---------- FLOATING ORDER BUTTON ---------- */
-.fab{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;align-items:center;gap:.8rem;padding:.7rem 1.25rem .7rem .8rem;background:var(--gold);color:var(--ink);border:1px solid var(--gold-deep);box-shadow:0 12px 36px rgba(0,0,0,.55),0 0 0 4px rgba(10,10,10,.85);transition:transform .3s,background .3s}
+.fab{position:fixed;right:14px;bottom:14px;z-index:60;display:flex;align-items:center;gap:.55rem;padding:.5rem .95rem .5rem .55rem;background:var(--gold);color:var(--ink);border:1px solid var(--gold-deep);box-shadow:0 12px 36px rgba(0,0,0,.55),0 0 0 4px rgba(10,10,10,.85);transition:transform .3s,background .3s}
 .fab:hover{transform:translateY(-3px);background:var(--sand)}
-.fab img{height:34px;width:auto}
-.fab b{display:block;font-weight:500;font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;line-height:1.1}
-.fab small{display:block;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;opacity:.75;margin-top:.2rem}
+.fab img{height:24px;width:auto;filter:brightness(0);opacity:.85}
+.fab b{display:block;font-weight:500;font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;line-height:1.1}
+.fab small{display:block;font-size:.46rem;letter-spacing:.18em;text-transform:uppercase;opacity:.72;margin-top:.15rem}
 
 /* ---------- Reveal ---------- */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
@@ -274,7 +285,8 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
 /* ---------- Responsive ---------- */
 @media (max-width:1024px){.hero-grid{gap:3rem}.story-grid{gap:3rem}}
 @media (max-width:900px){
-  .hero{padding:104px 0 40px;min-height:0}
+  .topband{padding-top:76px}
+  .hero{padding:40px 0 40px;min-height:0}
   .hero-grid,.story-grid,.rev-grid,.visit-grid{grid-template-columns:1fr;gap:2.4rem}
   .arch-wrap{display:none}
   .hero::after{background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(226,199,144,.12),transparent 70%)}
@@ -293,18 +305,18 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
   .story,.coffee,.gallery,.reviews,.visit{padding:4.2rem 0}
   .sec-head{margin-bottom:1.8rem}
   .story-body p:first-child::first-letter{font-size:3.6rem}
-  .fab{right:12px;bottom:12px;left:12px;justify-content:center}
-  .fab b{font-size:.78rem}
+  .fab{right:12px;bottom:12px}
   .arrows{display:none}
 }
 @media (max-width:640px){
   .wrap{width:min(1200px,88vw)}
   .rail{scroll-padding-left:6vw;padding-left:6vw;padding-right:6vw}
-  .marquee span{font-size:1.05rem;padding:0 1.1rem;gap:1.1rem}
+  .marquee span{font-size:.58rem;padding:0 .9rem;gap:.9rem}
+  .marquee span.ar{font-size:.8rem}
   .menu-note{padding:1.3rem 1.2rem}
   .menu-note p{font-size:1.3rem}
   .foot-bottom{justify-content:center;text-align:center}
-  body{padding-bottom:92px}
+  body{padding-bottom:72px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -335,21 +347,28 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
       <a href="https://www.google.com/maps/dir/?api=1&destination=5052+West+Ln+Ste+4+Stockton+CA+95210" target="_blank" rel="noopener">Directions</a>
       <a href="#follow">Follow</a>
       <a class="js-review" href="#follow" target="_blank" rel="noopener">Review</a>
-      <a class="btn solid js-order" href="#visit">Order Ahead</a>
+      <a class="btn solid order js-order" href="#visit"><b>Order Ahead</b><small>Pickup &amp; delivery available</small></a>
     </div>
-    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="links"><span></span></button>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 24 24" aria-hidden="true"><g class="m"><path d="M3 4h18"/><path d="M3 11h10v9h8"/><path d="M3 18h5"/><path d="M17 4v4h4"/></g><g class="x"><path d="M5 5l14 14M19 5L5 19"/></g></svg></button>
   </div>
 </nav>
 
-<header class="hero" id="top">
+<div class="topband" id="top">
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Hadara</span><span class="ar">حضارة</span><span>Yemeni Coffee</span><span>Stockton · The 209</span><span class="ar">قهوة يمنية</span><span>Sustainably Sourced</span><span>Made With Passion</span>
+    <span>Hadara</span><span class="ar">حضارة</span><span>Yemeni Coffee</span><span>Stockton · The 209</span><span class="ar">قهوة يمنية</span><span>Sustainably Sourced</span><span>Made With Passion</span>
+  </div>
+</div>
+</div>
+<header class="hero">
   <div class="wrap hero-grid">
     <div>
       <div class="eyebrow rule">Yemeni Coffee House · Stockton, CA · The 209</div>
       <h1>Civilization,<br>poured <em>by the cup.</em></h1>
       <p class="lede"><b>Hadara — حضارة — means civilization.</b> Authentic Yemeni coffee, chai, crepes and desserts, brewed the way the birthplace of coffee has poured it for centuries. On West Lane in Stockton.</p>
       <div class="order-cta">
-        <a class="btn solid js-order" href="#visit">Order Ahead</a>
-        <small>Pickup &amp; delivery available</small>
+        <a class="btn solid order js-order" href="#visit"><b>Order Ahead</b><small>Pickup &amp; delivery available</small></a>
       </div>
       <div class="quick" aria-label="Quick links">
         <a href="https://www.tiktok.com/@hadara_coffee" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 6.7a4.8 4.8 0 0 1-3.8-4.2V2h-3.4v13.6a2.9 2.9 0 1 1-2-2.7V9.4a6.3 6.3 0 1 0 5.4 6.2V8.7a8.2 8.2 0 0 0 3.8 1.2V6.7z"/></svg>TikTok</a>
@@ -365,12 +384,6 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
   </div>
 </header>
 
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Hadara</span><span class="ar">حضارة</span><span>Yemeni Coffee</span><span>Stockton · The 209</span><span class="ar">قهوة يمنية</span><span>Sustainably Sourced</span><span>Made With Passion</span><span>Pickup &amp; Delivery</span>
-    <span>Hadara</span><span class="ar">حضارة</span><span>Yemeni Coffee</span><span>Stockton · The 209</span><span class="ar">قهوة يمنية</span><span>Sustainably Sourced</span><span>Made With Passion</span><span>Pickup &amp; Delivery</span>
-  </div>
-</div>
 
 <section class="story" id="story">
   <div class="wrap story-grid">
@@ -413,7 +426,7 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
     </div>
     <div class="menu-note rv">
       <p>The full menu is one tap away.<small>Coffee · Chai · Crepes · Waffles · Desserts</small></p>
-      <a class="btn solid js-order" href="#visit">Order Ahead</a>
+      <a class="btn solid order js-order" href="#visit"><b>Order Ahead</b><small>Pickup &amp; delivery available</small></a>
     </div>
   </div>
 </section>
@@ -473,7 +486,7 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
       </div>
       <div class="visit-ctas">
         <a class="btn solid" href="https://www.google.com/maps/dir/?api=1&destination=5052+West+Ln+Ste+4+Stockton+CA+95210" target="_blank" rel="noopener">Get Directions →</a>
-        <a class="btn line js-order" href="#visit">Order Ahead</a>
+        <a class="btn line order js-order" href="#visit"><b>Order Ahead</b><small>Pickup &amp; delivery available</small></a>
       </div>
     </div>
     <div class="map rv">
@@ -501,7 +514,7 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
 
 <a class="fab js-order" href="#visit" aria-label="Order ahead, pickup and delivery available">
   <img src="{{MARK}}" alt="" width="297" height="505">
-  <span><b>Order Ahead</b><small>Pickup &amp; delivery</small></span>
+  <span><b>Order</b><small>Pickup &amp; delivery</small></span>
 </a>
 
 <script>
@@ -543,6 +556,23 @@ footer .tag{font-family:var(--serif);font-style:italic;font-size:1.3rem;opacity:
       var card=rail.firstElementChild, step=card?card.getBoundingClientRect().width+16:300;
       rail.scrollBy({left:step*parseInt(btn.getAttribute('data-dir'),10),behavior:'smooth'});
     })})}
+    /* auto-advance every 2s; pauses while touched/hovered/dragged, resumes after 4s idle; only while on screen */
+    var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches, visible=false, paused=false, idleT=null, timer=null;
+    function cardStep(){var c=rail.firstElementChild;return c?c.getBoundingClientRect().width+16:300}
+    function advance(){
+      if(!visible||paused||document.hidden)return;
+      var max=rail.scrollWidth-rail.clientWidth;
+      if(rail.scrollLeft>=max-4){rail.scrollTo({left:0,behavior:'smooth'})}else{rail.scrollBy({left:cardStep(),behavior:'smooth'})}
+    }
+    function hold(){paused=true;clearTimeout(idleT)}
+    function release(){clearTimeout(idleT);idleT=setTimeout(function(){paused=false},4000)}
+    if(!reduce){
+      timer=setInterval(advance,2000);
+      ['pointerenter','pointerdown','touchstart','focusin','wheel'].forEach(function(ev){rail.addEventListener(ev,hold,{passive:true})});
+      ['pointerleave','pointerup','touchend','touchcancel','focusout'].forEach(function(ev){rail.addEventListener(ev,release,{passive:true})});
+      if(arrows){arrows.addEventListener('click',function(){hold();release()})}
+      if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){visible=e.isIntersecting})},{threshold:.35}).observe(rail)}else{visible=true}
+    }
     var down=false,sx=0,sl=0,moved=false;
     rail.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;down=true;moved=false;sx=e.clientX;sl=rail.scrollLeft;rail.classList.add('dragging')});
     window.addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx;if(Math.abs(dx)>3)moved=true;rail.scrollLeft=sl-dx});
